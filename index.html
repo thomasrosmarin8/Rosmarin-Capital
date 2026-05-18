@@ -19,7 +19,9 @@
       <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
       <ul class="nav-links">
         <li><a href="#performance">Performance</a></li>
+        <li><a href="#analytics">Analytics</a></li>
         <li><a href="#positions">Positions</a></li>
+        <li><a href="#watchlist">Watchlist</a></li>
         <li><a href="#thesis">Thesis</a></li>
         <li><a href="#mission">Mission</a></li>
         <li><a href="#about">About</a></li>
@@ -99,6 +101,84 @@
     </div>
   </section>
 
+  <!-- ANALYTICS -->
+  <section id="analytics">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Portfolio Analytics</span>
+        <h2>Portfolio Breakdown</h2>
+        <p class="section-subtitle">A deeper look at composition, attribution, and what the numbers reveal.</p>
+      </div>
+
+      <div class="analytics-metrics" id="analytics-metrics">
+        <div class="analytic-card">
+          <span class="analytic-icon">&#9650;</span>
+          <span class="analytic-value positive" id="an-total-value">--</span>
+          <span class="analytic-label">Portfolio Value</span>
+        </div>
+        <div class="analytic-card">
+          <span class="analytic-icon">&#9654;</span>
+          <span class="analytic-value positive" id="an-total-gain">--</span>
+          <span class="analytic-label">Unrealized Gain</span>
+        </div>
+        <div class="analytic-card">
+          <span class="analytic-icon">&#9733;</span>
+          <span class="analytic-value" id="an-win-rate">--</span>
+          <span class="analytic-label">Win Rate</span>
+        </div>
+        <div class="analytic-card">
+          <span class="analytic-icon">&#8657;</span>
+          <span class="analytic-value positive" id="an-alpha">--</span>
+          <span class="analytic-label">Alpha vs S&amp;P 500</span>
+        </div>
+        <div class="analytic-card">
+          <span class="analytic-icon">&#9651;</span>
+          <span class="analytic-value gain" id="an-best">--</span>
+          <span class="analytic-label">Best Position</span>
+        </div>
+        <div class="analytic-card">
+          <span class="analytic-icon">&#9661;</span>
+          <span class="analytic-value loss" id="an-worst">--</span>
+          <span class="analytic-label">Worst Position</span>
+        </div>
+      </div>
+
+      <div class="analytics-charts">
+        <div class="analytics-chart-card">
+          <h3 class="chart-card-title">Sector Allocation</h3>
+          <div class="donut-wrap">
+            <canvas id="sectorChart"></canvas>
+          </div>
+          <div class="sector-legend" id="sector-legend"></div>
+        </div>
+        <div class="analytics-chart-card">
+          <h3 class="chart-card-title">Position P&amp;L Attribution</h3>
+          <div class="attribution-wrap">
+            <canvas id="attributionChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="insights-row" id="insights-row">
+        <div class="insight-card insight-gold">
+          <div class="insight-label">AI Concentration</div>
+          <div class="insight-value">50.6%</div>
+          <div class="insight-desc">of the portfolio is in AI-exposed companies (GOOG, META, MU) — the dominant theme driving long-term thesis.</div>
+        </div>
+        <div class="insight-card insight-green">
+          <div class="insight-label">Standout Performer</div>
+          <div class="insight-value">MU +60.1%</div>
+          <div class="insight-desc">Micron is the portfolio's biggest winner, validating the AI memory thesis ahead of schedule.</div>
+        </div>
+        <div class="insight-card insight-blue">
+          <div class="insight-label">Macro Diversification</div>
+          <div class="insight-value">~27%</div>
+          <div class="insight-desc">is spread across Defense (RTX), Nuclear (LEU), and Infrastructure (BIP, LMB) — non-tech macro bets adding resilience.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- POSITIONS -->
   <section id="positions">
     <div class="section-inner">
@@ -111,6 +191,54 @@
         <!-- Populated by script.js -->
       </div>
       <p class="disclaimer">This is not investment advice. All information is for educational and informational purposes only.</p>
+    </div>
+  </section>
+
+  <!-- DEEP DIVE -->
+  <section id="deep-dive">
+    <div class="section-inner">
+      <div class="deepdive-banner">
+        <div class="deepdive-left">
+          <span class="section-label">Featured Research</span>
+          <h2>Most Recent Deep Dive</h2>
+          <p>Every position in this portfolio starts with serious research. My Substack deep dives walk through the full thesis, financials, and risk factors behind each idea — written in plain English, no jargon.</p>
+          <a href="https://substack.com/home/post/p-195176530" target="_blank" rel="noopener" class="btn btn-primary">Read the Deep Dive &rarr;</a>
+          <a href="https://substack.com/@rosmarincapital" target="_blank" rel="noopener" class="btn btn-outline" style="margin-left:0.75rem;">All Research</a>
+        </div>
+        <div class="deepdive-right">
+          <div class="deepdive-card">
+            <div class="deepdive-card-tag">Deep Dive</div>
+            <div class="deepdive-card-lines">
+              <span></span><span></span><span style="width:55%"></span>
+            </div>
+            <div class="deepdive-card-lines" style="margin-top:1.25rem">
+              <span style="width:90%"></span><span style="width:80%"></span><span style="width:85%"></span><span style="width:60%"></span>
+            </div>
+            <div class="deepdive-card-lines" style="margin-top:1.25rem">
+              <span style="width:95%"></span><span style="width:75%"></span><span style="width:88%"></span>
+            </div>
+            <div class="deepdive-card-cta">
+              <span>Rosmarin Capital</span>
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WATCHLIST -->
+  <section id="watchlist">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">On My Radar</span>
+        <h2>Watchlist</h2>
+        <p class="section-subtitle">Companies I'm actively researching and watching for the right entry point. Not yet in the portfolio — but on my shortlist.</p>
+      </div>
+      <div class="watchlist-grid" id="watchlist-grid">
+        <!-- Populated by script.js -->
+      </div>
+      <p class="disclaimer">Watchlist is for informational purposes only. Not a recommendation to buy or sell any security.</p>
     </div>
   </section>
 

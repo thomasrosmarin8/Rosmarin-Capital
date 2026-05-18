@@ -98,4 +98,67 @@ const PORTFOLIO_DATA = {
     },
   ],
 
+  // ── Sector allocation (for doughnut chart) ──
+  sectors: [
+    { label: 'AI / Technology',    weight: 50.6, color: '#C9A84C' },
+    { label: 'Platform Economy',   weight: 10.1, color: '#60a5fa' },
+    { label: 'Industrial Services',weight:  9.9, color: '#a78bfa' },
+    { label: 'Defense & Aerospace',weight:  9.9, color: '#34d399' },
+    { label: 'Nuclear Energy',     weight:  9.9, color: '#fb923c' },
+    { label: 'Infrastructure',     weight:  7.0, color: '#f472b6' },
+    { label: 'Cash',               weight:  2.7, color: '#4a5568' },
+  ],
+
+  // ── Watchlist ───────────────────────────────
+  watchlist: [
+    {
+      ticker: 'MSFT',
+      name: 'Microsoft Corporation',
+      sector: 'Cloud / AI',
+      status: 'Awaiting Entry',
+      statusClass: 'status-waiting',
+      why: "Azure and Copilot are the clearest enterprise AI monetization story in tech. GitHub's AI tools and M365 Copilot integration give Microsoft a seat in every knowledge worker's workflow. Watching for a better entry — the business is exceptional, the multiple demands patience.",
+    },
+    {
+      ticker: 'LLY',
+      name: 'Eli Lilly & Company',
+      sector: 'Pharmaceuticals',
+      status: 'High Conviction',
+      statusClass: 'status-conviction',
+      why: "Mounjaro and Zepbound dominate the GLP-1 market with best-in-class efficacy data. The obesity and diabetes TAM could exceed $150B globally. A deep pipeline spanning oncology and Alzheimer's adds optionality. One of the most compelling 5-year compounders in any sector.",
+    },
+    {
+      ticker: 'SOFI',
+      name: 'SoFi Technologies, Inc.',
+      sector: 'Fintech / Banking',
+      status: 'Watching',
+      statusClass: 'status-watching',
+      why: "A fully integrated digital bank that recently turned profitable. The banking charter significantly lowers cost of capital vs. fintech peers. Market is pricing in near-zero long-term growth — looks like a misunderstood turnaround story with multiple years of re-rating potential.",
+    },
+    {
+      ticker: 'NBIS',
+      name: 'Nebius Group N.V.',
+      sector: 'AI Infrastructure',
+      status: 'High Conviction',
+      statusClass: 'status-conviction',
+      why: "Formerly Yandex's international arm, now a focused AI cloud infrastructure company building GPU compute clusters across Europe. One of the few credible alternatives to US hyperscalers for European AI workloads. Early-stage and high-risk — but the opportunity is enormous.",
+    },
+    {
+      ticker: 'TTWO',
+      name: 'Take-Two Interactive Software',
+      sector: 'Interactive Gaming',
+      status: 'Watching',
+      statusClass: 'status-watching',
+      why: "GTA VI is one of the most anticipated software releases in history. Take-Two's IP portfolio — GTA, Red Dead, NBA 2K — is best-in-class. The stock has been punished for delays, but the eventual launch represents a massive catalyst. Position sizing and timing are critical here.",
+    },
+    {
+      ticker: 'LULU',
+      name: 'Lululemon Athletica Inc.',
+      sector: 'Consumer / Retail',
+      status: 'Watching',
+      statusClass: 'status-watching',
+      why: "Premium athletic brand with cult-like customer loyalty and exceptional repeat purchase rates. Slowing US growth has hammered the stock, but international expansion — particularly China — remains a significant untapped runway. A best-in-class brand at a much more interesting price.",
+    },
+  ],
+
 };

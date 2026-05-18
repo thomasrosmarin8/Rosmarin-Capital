@@ -6,7 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initNav();
   initStats();
   initPerformanceChart();
+  initAnalytics();
   initPositions();
+  initWatchlist();
 });
 
 // ── Navbar scroll & mobile toggle ─────────────
@@ -156,6 +158,167 @@ function initPerformanceChart() {
         },
       },
     },
+  });
+}
+
+// ── Analytics ─────────────────────────────────
+function initAnalytics() {
+  const perf = PORTFOLIO_DATA.performance;
+  const positions = PORTFOLIO_DATA.positions.filter(p => p.ticker !== 'CASH');
+  const sign = v => v >= 0 ? '+' : '';
+
+  // Compute overall figures
+  const inceptionReturn = 7.25;
+  const totalCost = 200000;
+  const totalValue = totalCost * (1 + inceptionReturn / 100);
+  const totalGain = totalValue - totalCost;
+
+  const winners = positions.filter(p => p.gainLoss > 0);
+  const winRate = Math.round(winners.length / positions.length * 100);
+
+  const sp500Start = perf[0].sp500;
+  const sp500Latest = perf[perf.length - 1].sp500;
+  const sp500Return = (sp500Latest - sp500Start) / sp500Start * 100;
+  const alpha = (inceptionReturn - sp500Return).toFixed(1);
+
+  const sorted = [...positions].sort((a, b) => b.gainLoss - a.gainLoss);
+  const best = sorted[0];
+  const worst = sorted[sorted.length - 1];
+
+  document.getElementById('an-total-value').textContent = '$' + Math.round(totalValue).toLocaleString();
+  document.getElementById('an-total-gain').textContent = '+$' + Math.round(totalGain).toLocaleString();
+  document.getElementById('an-win-rate').textContent = winRate + '%  (' + winners.length + '/' + positions.length + ')';
+  document.getElementById('an-alpha').textContent = sign(alpha) + alpha + '%';
+  document.getElementById('an-best').textContent = best.ticker + '  ' + sign(best.gainLoss) + best.gainLoss + '%';
+  document.getElementById('an-worst').textContent = worst.ticker + '  ' + sign(worst.gainLoss) + worst.gainLoss + '%';
+
+  initSectorChart();
+  initAttributionChart(sorted);
+}
+
+function initSectorChart() {
+  const sectors = PORTFOLIO_DATA.sectors;
+  const ctx = document.getElementById('sectorChart').getContext('2d');
+
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: sectors.map(s => s.label),
+      datasets: [{
+        data: sectors.map(s => s.weight),
+        backgroundColor: sectors.map(s => s.color),
+        borderColor: '#0a1628',
+        borderWidth: 3,
+        hoverOffset: 8,
+      }],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      cutout: '62%',
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1a2744',
+          titleColor: '#C9A84C',
+          bodyColor: '#e2e8f0',
+          borderColor: '#C9A84C',
+          borderWidth: 1,
+          padding: 10,
+          callbacks: {
+            label: ctx => `  ${ctx.label}: ${ctx.parsed}%`,
+          },
+        },
+      },
+    },
+  });
+
+  // Custom legend
+  const legend = document.getElementById('sector-legend');
+  PORTFOLIO_DATA.sectors.forEach(s => {
+    const row = document.createElement('div');
+    row.className = 'legend-row';
+    row.innerHTML = `
+      <span class="legend-dot" style="background:${s.color}"></span>
+      <span class="legend-label">${s.label}</span>
+      <span class="legend-val">${s.weight}%</span>
+    `;
+    legend.appendChild(row);
+  });
+}
+
+function initAttributionChart(sortedPositions) {
+  const labels = sortedPositions.map(p => p.ticker);
+  const values = sortedPositions.map(p => p.gainLoss);
+  const colors = values.map(v => v >= 0 ? 'rgba(74, 222, 128, 0.75)' : 'rgba(248, 113, 113, 0.75)');
+  const borderColors = values.map(v => v >= 0 ? '#4ade80' : '#f87171');
+
+  const ctx = document.getElementById('attributionChart').getContext('2d');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        data: values,
+        backgroundColor: colors,
+        borderColor: borderColors,
+        borderWidth: 1.5,
+        borderRadius: 4,
+      }],
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1a2744',
+          titleColor: '#C9A84C',
+          bodyColor: '#e2e8f0',
+          borderColor: '#C9A84C',
+          borderWidth: 1,
+          padding: 10,
+          callbacks: {
+            label: ctx => `  P/L Open: ${ctx.parsed.x > 0 ? '+' : ''}${ctx.parsed.x}%`,
+          },
+        },
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(255,255,255,0.05)' },
+          ticks: {
+            color: '#718096',
+            font: { family: 'Inter', size: 11 },
+            callback: v => (v > 0 ? '+' : '') + v + '%',
+          },
+        },
+        y: {
+          grid: { display: false },
+          ticks: { color: '#C9A84C', font: { family: 'Inter', size: 12, weight: '600' } },
+        },
+      },
+    },
+  });
+}
+
+// ── Watchlist ─────────────────────────────────
+function initWatchlist() {
+  const grid = document.getElementById('watchlist-grid');
+  PORTFOLIO_DATA.watchlist.forEach(stock => {
+    const card = document.createElement('div');
+    card.className = 'watchlist-card';
+    card.innerHTML = `
+      <div class="wl-header">
+        <div class="wl-ticker">${stock.ticker}</div>
+        <div class="wl-status ${stock.statusClass}">${stock.status}</div>
+      </div>
+      <div class="wl-name">${stock.name}</div>
+      <div class="wl-sector">${stock.sector}</div>
+      <p class="wl-why">${stock.why}</p>
+    `;
+    grid.appendChild(card);
   });
 }
 

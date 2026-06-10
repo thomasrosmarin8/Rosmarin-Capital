@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="96" fill="#f0ebe0" stroke="#1e3055" stroke-width="3"/>
+
+  <!-- Gold sunburst rays fanning above mountains -->
+  <!-- Center of sunburst: ~100, 95 -->
+  <g stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" opacity="0.92">
+    <!-- Central ray -->
+    <line x1="100" y1="93" x2="100" y2="48"/>
+    <!-- Rays fanning left -->
+    <line x1="100" y1="93" x2="84"  y2="49"/>
+    <line x1="100" y1="93" x2="69"  y2="55"/>
+    <line x1="100" y1="93" x2="57"  y2="66"/>
+    <line x1="100" y1="93" x2="50"  y2="80"/>
+    <line x1="100" y1="93" x2="46"  y2="95"/>
+    <!-- Rays fanning right -->
+    <line x1="100" y1="93" x2="116" y2="49"/>
+    <line x1="100" y1="93" x2="131" y2="55"/>
+    <line x1="100" y1="93" x2="143" y2="66"/>
+    <line x1="100" y1="93" x2="150" y2="80"/>
+    <line x1="100" y1="93" x2="154" y2="95"/>
+  </g>
+
+  <!-- Mountain peaks in navy -->
+  <!-- Left peak -->
+  <polygon points="52,118 78,72 97,102" fill="#1e3055"/>
+  <!-- Center (tallest) peak -->
+  <polygon points="72,118 100,58 128,118" fill="#1e3055"/>
+  <!-- Right peak -->
+  <polygon points="103,102 122,72 148,118" fill="#1e3055"/>
+  <!-- Base fill to unify the range -->
+  <rect x="52" y="110" width="96" height="8" fill="#1e3055"/>
+
+  <!-- "ROSMARIN" text -->
+  <text
+    x="100"
+    y="143"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="17"
+    font-weight="bold"
+    fill="#1e3055"
+    text-anchor="middle"
+    letter-spacing="2.5"
+  >ROSMARIN</text>
+
+  <!-- Decorative lines + "CAPITAL" -->
+  <line x1="32" y1="155" x2="68" y2="155" stroke="#1e3055" stroke-width="1"/>
+  <text
+    x="100"
+    y="158"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="9"
+    fill="#1e3055"
+    text-anchor="middle"
+    letter-spacing="3"
+  >CAPITAL</text>
+  <line x1="132" y1="155" x2="168" y2="155" stroke="#1e3055" stroke-width="1"/>
+</svg>

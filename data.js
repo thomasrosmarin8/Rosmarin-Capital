@@ -161,4 +161,29 @@ const PORTFOLIO_DATA = {
     },
   ],
 
+  // ── Recommended Reads ──────────────────────────
+  reads: [
+    {
+      title: 'Gene Editing: What It Is & Why It Matters',
+      category: 'Biotech / Science',
+      description: "A ground-up breakdown of CRISPR and the gene editing revolution. What the science actually is, where it is headed, and why it belongs on every serious investor's radar.",
+      url: 'https://rosmarincapital.substack.com/p/gene-editing-what-it-is-why-it-matters',
+      icon: '&#129516;',
+    },
+    {
+      title: 'Quantum Computing: What It Is & Why It Matters',
+      category: 'Technology / Science',
+      description: 'Demystifying quantum computing from first principles. The timeline, the players, what happens when it arrives, and how to think about it as an investor today.',
+      url: 'https://rosmarincapital.substack.com/p/quantum-computing-what-it-is-why',
+      icon: '&#9883;',
+    },
+    {
+      title: 'Position Deep Dive: Micron Technology',
+      category: 'Investment Research',
+      description: 'A full-length investment thesis on MU. The AI memory cycle, financial analysis, competitive dynamics, and why this is one of the highest-conviction positions in the portfolio.',
+      url: 'https://rosmarincapital.substack.com/p/position-deep-dive-micron-technology',
+      icon: '&#128202;',
+    },
+  ],
+
 };

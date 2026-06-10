@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -15,19 +15,19 @@
   <!-- NAV -->
   <nav id="navbar">
     <div class="nav-inner">
-      <a href="#hero" class="nav-logo">Rosmarin Capital</a>
+      <a href="#hero" class="nav-logo">
+        <img src="logo.svg" alt="Rosmarin Capital" class="nav-logo-img" />
+        <span>Rosmarin Capital</span>
+      </a>
       <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
       <ul class="nav-links">
-        <li><a href="#performance">Performance</a></li>
-        <li><a href="#analytics">Analytics</a></li>
-        <li><a href="#positions">Positions</a></li>
-        <li><a href="#watchlist">Watchlist</a></li>
-        <li><a href="#thesis">Thesis</a></li>
+        <li><a href="#deep-dive">Research</a></li>
+        <li><a href="#performance">Portfolio</a></li>
         <li><a href="#mission">Mission</a></li>
         <li><a href="#about">About</a></li>
         <li>
           <a href="https://substack.com/@rosmarincapital" target="_blank" rel="noopener" class="nav-social">
-            <img src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Fimg%2Fsubstack-favicon.ico" alt="Substack" class="social-icon" />
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
             Substack
           </a>
         </li>
@@ -43,27 +43,69 @@
 
   <!-- HERO -->
   <section id="hero">
+    <div class="hero-glow"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">Long-Term Growth Investing</p>
-      <h1>Rosmarin Capital</h1>
-      <p class="hero-tagline">Identifying exceptional businesses at the frontier of technology, innovation, and value creation — and holding them for the long run.</p>
-      <div class="hero-cta">
-        <a href="#performance" class="btn btn-primary">View Performance</a>
-        <a href="#thesis" class="btn btn-outline">Read Our Thesis</a>
+      <div class="hero-logo-wrap reveal">
+        <img src="logo.svg" alt="Rosmarin Capital" class="hero-logo-img" />
+      </div>
+      <h1 class="reveal reveal-delay-1">Rosmarin Capital</h1>
+      <p class="hero-pursuit reveal reveal-delay-2">The Pursuit Starts Here</p>
+      <div class="hero-cta reveal reveal-delay-3">
+        <a href="#deep-dive" class="btn btn-primary">Read the Research</a>
+        <a href="#performance" class="btn btn-outline">View Portfolio</a>
       </div>
     </div>
-    <div class="hero-stats">
-      <div class="stat-card">
-        <span class="stat-value" id="ytd-stat">+0.0%</span>
-        <span class="stat-label">YTD Return</span>
+    <a href="#deep-dive" class="hero-scroll-hint">
+      <span>scroll</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </a>
+  </section>
+
+  <!-- DEEP DIVE -->
+  <section id="deep-dive">
+    <div class="section-inner">
+      <div class="deepdive-banner reveal">
+        <div class="deepdive-left">
+          <span class="section-label">Featured Research</span>
+          <h2>Most Recent Deep Dive</h2>
+          <p>Every position starts with serious work. My deep dives walk through the full thesis, financials, and risk factors behind each idea, written in plain English with no jargon.</p>
+          <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:2rem;">
+            <a href="https://rosmarincapital.substack.com/p/position-deep-dive-micron-technology" target="_blank" rel="noopener" class="btn btn-primary">Read the Deep Dive &rarr;</a>
+            <a href="https://substack.com/@rosmarincapital" target="_blank" rel="noopener" class="btn btn-outline">All Research</a>
+          </div>
+        </div>
+        <div class="deepdive-right">
+          <div class="deepdive-card">
+            <div class="deepdive-card-tag">Deep Dive</div>
+            <div class="deepdive-card-lines">
+              <span></span><span></span><span style="width:55%"></span>
+            </div>
+            <div class="deepdive-card-lines" style="margin-top:1.25rem">
+              <span style="width:90%"></span><span style="width:80%"></span><span style="width:85%"></span><span style="width:60%"></span>
+            </div>
+            <div class="deepdive-card-lines" style="margin-top:1.25rem">
+              <span style="width:95%"></span><span style="width:75%"></span><span style="width:88%"></span>
+            </div>
+            <div class="deepdive-card-cta">
+              <span>Rosmarin Capital</span>
+              <img src="logo.svg" alt="" style="width:24px;height:24px;border-radius:50%;" />
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="stat-card">
-        <span class="stat-value" id="inception-stat">+0.0%</span>
-        <span class="stat-label">Since Inception</span>
+    </div>
+  </section>
+
+  <!-- RECOMMENDED READS -->
+  <section id="reads">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-label">Personal Favorites</span>
+        <h2>Recommended Reads</h2>
+        <p class="section-subtitle">Research I'm most proud of. Deep dives into the ideas, technologies, and companies shaping the next decade.</p>
       </div>
-      <div class="stat-card">
-        <span class="stat-value" id="positions-stat">0</span>
-        <span class="stat-label">Active Positions</span>
+      <div class="reads-grid" id="reads-grid">
+        <!-- Populated by script.js -->
       </div>
     </div>
   </section>
@@ -71,15 +113,15 @@
   <!-- PERFORMANCE -->
   <section id="performance">
     <div class="section-inner">
-      <div class="section-header">
+      <div class="section-header reveal">
         <span class="section-label">Track Record</span>
         <h2>Portfolio Performance</h2>
-        <p class="section-subtitle">Rosmarin Capital vs. S&amp;P 500 benchmark, indexed to 100 at inception.</p>
+        <p class="section-subtitle">Paper trading portfolio vs. S&amp;P 500 benchmark, indexed to 100 at inception.</p>
       </div>
-      <div class="chart-container">
+      <div class="chart-container reveal">
         <canvas id="performanceChart"></canvas>
       </div>
-      <div class="perf-metrics">
+      <div class="perf-metrics reveal">
         <div class="metric-card">
           <span class="metric-value" id="ytd-perf">--</span>
           <span class="metric-label">YTD Return</span>
@@ -97,20 +139,20 @@
           <span class="metric-label">Best Month</span>
         </div>
       </div>
-      <p class="disclaimer">Past performance is not indicative of future results. For educational purposes only.</p>
+      <p class="disclaimer">Paper trading portfolio for educational purposes. Past performance is not indicative of future results.</p>
     </div>
   </section>
 
   <!-- ANALYTICS -->
   <section id="analytics">
     <div class="section-inner">
-      <div class="section-header">
+      <div class="section-header reveal">
         <span class="section-label">Portfolio Analytics</span>
         <h2>Portfolio Breakdown</h2>
         <p class="section-subtitle">A deeper look at composition, attribution, and what the numbers reveal.</p>
       </div>
 
-      <div class="analytics-metrics" id="analytics-metrics">
+      <div class="analytics-metrics reveal" id="analytics-metrics">
         <div class="analytic-card">
           <span class="analytic-icon">&#9650;</span>
           <span class="analytic-value positive" id="an-total-value">--</span>
@@ -143,7 +185,7 @@
         </div>
       </div>
 
-      <div class="analytics-charts">
+      <div class="analytics-charts reveal">
         <div class="analytics-chart-card">
           <h3 class="chart-card-title">Sector Allocation</h3>
           <div class="donut-wrap">
@@ -159,11 +201,11 @@
         </div>
       </div>
 
-      <div class="insights-row" id="insights-row">
+      <div class="insights-row reveal">
         <div class="insight-card insight-gold">
           <div class="insight-label">AI Concentration</div>
           <div class="insight-value">50.6%</div>
-          <div class="insight-desc">of the portfolio is in AI-exposed companies (GOOG, META, MU) — the dominant theme driving long-term thesis.</div>
+          <div class="insight-desc">of the portfolio is in AI-exposed companies (GOOG, META, MU), the dominant theme driving the long-term view.</div>
         </div>
         <div class="insight-card insight-green">
           <div class="insight-label">Standout Performer</div>
@@ -173,7 +215,7 @@
         <div class="insight-card insight-blue">
           <div class="insight-label">Macro Diversification</div>
           <div class="insight-value">~27%</div>
-          <div class="insight-desc">is spread across Defense (RTX), Nuclear (LEU), and Infrastructure (BIP, LMB) — non-tech macro bets adding resilience.</div>
+          <div class="insight-desc">is spread across Defense (RTX), Nuclear (LEU), and Infrastructure (BIP, LMB), non-tech bets adding resilience.</div>
         </div>
       </div>
     </div>
@@ -182,112 +224,22 @@
   <!-- POSITIONS -->
   <section id="positions">
     <div class="section-inner">
-      <div class="section-header">
+      <div class="section-header reveal">
         <span class="section-label">Current Holdings</span>
         <h2>Portfolio Positions</h2>
-        <p class="section-subtitle">A concentrated portfolio of high-conviction growth companies. Updated regularly.</p>
+        <p class="section-subtitle">A concentrated portfolio of high-conviction ideas. Updated regularly.</p>
       </div>
-      <div class="positions-grid" id="positions-grid">
+      <div class="positions-grid reveal" id="positions-grid">
         <!-- Populated by script.js -->
       </div>
       <p class="disclaimer">This is not investment advice. All information is for educational and informational purposes only.</p>
     </div>
   </section>
 
-  <!-- DEEP DIVE -->
-  <section id="deep-dive">
-    <div class="section-inner">
-      <div class="deepdive-banner">
-        <div class="deepdive-left">
-          <span class="section-label">Featured Research</span>
-          <h2>Most Recent Deep Dive</h2>
-          <p>Every position in this portfolio starts with serious research. My Substack deep dives walk through the full thesis, financials, and risk factors behind each idea — written in plain English, no jargon.</p>
-          <a href="https://substack.com/home/post/p-195176530" target="_blank" rel="noopener" class="btn btn-primary">Read the Deep Dive &rarr;</a>
-          <a href="https://substack.com/@rosmarincapital" target="_blank" rel="noopener" class="btn btn-outline" style="margin-left:0.75rem;">All Research</a>
-        </div>
-        <div class="deepdive-right">
-          <div class="deepdive-card">
-            <div class="deepdive-card-tag">Deep Dive</div>
-            <div class="deepdive-card-lines">
-              <span></span><span></span><span style="width:55%"></span>
-            </div>
-            <div class="deepdive-card-lines" style="margin-top:1.25rem">
-              <span style="width:90%"></span><span style="width:80%"></span><span style="width:85%"></span><span style="width:60%"></span>
-            </div>
-            <div class="deepdive-card-lines" style="margin-top:1.25rem">
-              <span style="width:95%"></span><span style="width:75%"></span><span style="width:88%"></span>
-            </div>
-            <div class="deepdive-card-cta">
-              <span>Rosmarin Capital</span>
-              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WATCHLIST -->
-  <section id="watchlist">
-    <div class="section-inner">
-      <div class="section-header">
-        <span class="section-label">On My Radar</span>
-        <h2>Watchlist</h2>
-        <p class="section-subtitle">Companies I'm actively researching and watching for the right entry point. Not yet in the portfolio — but on my shortlist.</p>
-      </div>
-      <div class="watchlist-grid" id="watchlist-grid">
-        <!-- Populated by script.js -->
-      </div>
-      <p class="disclaimer">Watchlist is for informational purposes only. Not a recommendation to buy or sell any security.</p>
-    </div>
-  </section>
-
-  <!-- THESIS -->
-  <section id="thesis">
-    <div class="section-inner">
-      <div class="section-header">
-        <span class="section-label">Investment Philosophy</span>
-        <h2>Our Investment Thesis</h2>
-      </div>
-      <div class="thesis-grid">
-        <div class="thesis-card">
-          <div class="thesis-icon">&#129504;</div>
-          <h3>AI &amp; Technology Infrastructure</h3>
-          <p>Roughly half the portfolio is anchored in companies building or benefiting from the AI stack — GOOG, META, and MU. AI is not a trend; it is a platform shift that will compound for decades. We want exposure at every layer: software, semiconductors, and cloud.</p>
-        </div>
-        <div class="thesis-card">
-          <div class="thesis-icon">&#9883;</div>
-          <h3>Nuclear Energy Renaissance</h3>
-          <p>AI data centers require enormous, reliable baseload power that wind and solar cannot provide. Nuclear is the only clean answer at scale. Centrus Energy (LEU) is one of the only US-licensed producers of the advanced fuel next-generation reactors need — a rare and strategic asset.</p>
-        </div>
-        <div class="thesis-card">
-          <div class="thesis-icon">&#9992;</div>
-          <h3>Defense &amp; National Security</h3>
-          <p>Geopolitical complexity is not going away. RTX's Pratt &amp; Whitney engines and defense systems sit on a massive, multi-year backlog. NATO allies rearming and domestic modernization programs make this a structural, not cyclical, tailwind.</p>
-        </div>
-        <div class="thesis-card">
-          <div class="thesis-icon">&#127759;</div>
-          <h3>Real Asset Infrastructure</h3>
-          <p>Brookfield Infrastructure (BIP) and Limbach (LMB) provide exposure to essential, hard-to-replicate physical assets — from global utilities and ports to specialized mechanical services. Both benefit from the data center construction wave and offer inflation-protected cash flows.</p>
-        </div>
-        <div class="thesis-card">
-          <div class="thesis-icon">&#128663;</div>
-          <h3>Platform Economy</h3>
-          <p>Uber has built the dominant global mobility network with compounding network effects. Its pivot toward profitability is underway, and its partnerships with autonomous vehicle developers position it to benefit from the AV transition rather than be disrupted by it.</p>
-        </div>
-        <div class="thesis-card">
-          <div class="thesis-icon">&#10022;</div>
-          <h3>Independent, Bottom-Up Research</h3>
-          <p>Every position in this portfolio is built from primary sources — 10-Ks, earnings transcripts, industry data — not sell-side ratings or social media consensus. We hold through volatility when the thesis is intact, and cut when the facts change.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- MISSION -->
   <section id="mission">
     <div class="section-inner mission-inner">
-      <div class="mission-text">
+      <div class="mission-text reveal">
         <span class="section-label">Purpose</span>
         <h2>My Mission</h2>
         <p>Rosmarin Capital is my life's work. I built it around a single belief: that everyone, regardless of where they come from, what they earn, or what they've been told about their potential, deserves a genuine shot at financial freedom. Not because financial freedom is an end in itself, but because of what it unlocks. It is the foundation on which a life well-lived is built.</p>
@@ -298,7 +250,7 @@
           <a href="https://substack.com/@rosmarincapital" target="_blank" rel="noopener" class="btn btn-outline">All Research</a>
         </div>
       </div>
-      <div class="mission-quote">
+      <div class="mission-quote reveal reveal-delay-1">
         <blockquote>
           "The moment a person realizes that the life they imagined for themselves is actually possible. That is what drives me. That is what Rosmarin Capital is built around."
         </blockquote>
@@ -310,11 +262,11 @@
   <!-- ABOUT -->
   <section id="about">
     <div class="section-inner">
-      <div class="section-header">
+      <div class="section-header reveal">
         <span class="section-label">The Founder</span>
         <h2>About Me</h2>
       </div>
-      <div class="about-grid">
+      <div class="about-grid reveal">
         <div class="about-text">
           <p>I'm Thomas Rosmarin, a 19 year old Finance major at Marquette University, originally from Grand Rapids. I started investing at 15 and fell in love with markets not for the money, but because it was genuinely fun. The stock market clicked with me unlike anything I had ever pursued, and I became obsessed with learning everything there is to know.</p>
           <p>At Marquette I carry a 3.9 GPA and have been on the Dean's List every semester. I also help manage two endowment funds as an analyst for the Investment Club and as a member of the Applied Investment Management Portfolio Club, with the funds nearing a combined AUM of $1.5 million.</p>
@@ -339,13 +291,15 @@
   <footer id="footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <span class="footer-logo">Rosmarin Capital</span>
-        <p>Financial education and independent investment research.</p>
+        <a href="#hero" class="footer-logo-wrap">
+          <img src="logo.svg" alt="Rosmarin Capital" class="footer-logo-img" />
+          <span class="footer-logo">Rosmarin Capital</span>
+        </a>
+        <p>The Pursuit Starts Here.</p>
       </div>
       <div class="footer-links">
-        <a href="#performance">Performance</a>
-        <a href="#positions">Positions</a>
-        <a href="#thesis">Thesis</a>
+        <a href="#deep-dive">Research</a>
+        <a href="#performance">Portfolio</a>
         <a href="#mission">Mission</a>
         <a href="#about">About</a>
       </div>

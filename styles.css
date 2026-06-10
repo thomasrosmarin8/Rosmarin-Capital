@@ -43,7 +43,7 @@ a { color: inherit; text-decoration: none; }
 img, svg { display: block; }
 
 /* ── Typography ─────────────────────────────── */
-h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 5vw, 4.2rem); line-height: 1.08; letter-spacing: 0.01em; }
+h1 { font-family: 'Playfair Display', serif; font-size: clamp(3.4rem, 7vw, 6rem); line-height: 1.05; letter-spacing: 0.01em; }
 h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.2; }
 h3 { font-size: 1.05rem; font-weight: 600; line-height: 1.3; }
 
@@ -138,7 +138,7 @@ h3 { font-size: 1.05rem; font-weight: 600; line-height: 1.3; }
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 7rem 2rem 5rem;
+  padding: 4.5rem 2rem 3rem;
   position: relative;
   overflow: hidden;
   background: radial-gradient(ellipse 100% 80% at 50% -10%, var(--navy-mid) 0%, var(--navy-darkest) 65%);
@@ -179,7 +179,7 @@ h3 { font-size: 1.05rem; font-weight: 600; line-height: 1.3; }
 }
 #hero h1 {
   color: var(--cream);
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
   letter-spacing: 0.04em;
 }
 .hero-pursuit {
@@ -187,8 +187,15 @@ h3 { font-size: 1.05rem; font-weight: 600; line-height: 1.3; }
   font-style: italic;
   font-size: clamp(1.25rem, 2.5vw, 1.75rem);
   color: var(--gold);
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
   letter-spacing: 0.02em;
+}
+.hero-sub {
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+  color: var(--text-muted);
+  max-width: 480px;
+  margin: 0 auto 2rem;
+  line-height: 1.65;
 }
 .hero-cta {
   display: flex;
@@ -246,11 +253,11 @@ h3 { font-size: 1.05rem; font-weight: 600; line-height: 1.3; }
 .section-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 5.5rem 2rem;
+  padding: 3.5rem 2rem;
 }
 .section-header {
   text-align: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: 2rem;
 }
 .section-label {
   display: inline-block;
@@ -281,7 +288,7 @@ h3 { font-size: 1.05rem; font-weight: 600; line-height: 1.3; }
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 3.5rem;
+  padding: 2.5rem;
   position: relative;
   overflow: hidden;
 }
@@ -527,7 +534,7 @@ h3 { font-size: 1.05rem; font-weight: 600; line-height: 1.3; }
 .mission-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5rem;
+  gap: 3.5rem;
   align-items: center;
 }
 .mission-text .section-label { display: block; margin-bottom: 0.75rem; }
@@ -661,7 +668,6 @@ h3 { font-size: 1.05rem; font-weight: 600; line-height: 1.3; }
   .reads-grid { grid-template-columns: 1fr; }
   .perf-metrics { grid-template-columns: 1fr 1fr; }
   .analytics-metrics { grid-template-columns: repeat(2, 1fr); }
-  .hero-logo-img { width: 110px; height: 110px; }
   .footer-inner { flex-direction: column; gap: 1.5rem; }
   .footer-links { margin-left: 0; flex-direction: row; flex-wrap: wrap; gap: 0.75rem 1.25rem; }
   .footer-bottom { flex-direction: column; text-align: center; }

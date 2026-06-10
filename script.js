@@ -5,11 +5,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
   initScrollReveal();
-  initStats();
-  initPerformanceChart();
   initAnalytics();
   initReads();
-  initPositions();
 });
 
 // ── Navbar scroll & mobile toggle ─────────────

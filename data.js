@@ -180,7 +180,7 @@ const PORTFOLIO_DATA = {
     {
       title: 'Position Deep Dive: Micron Technology',
       category: 'Investment Research',
-      description: 'The full thesis behind a position that returned over 60% — and how I saw the AI memory cycle before most of the market did.',
+      description: 'The full thesis behind a position that returned over 100%.',
       url: 'https://rosmarincapital.substack.com/p/position-deep-dive-micron-technology',
       icon: '&#128202;',
     },

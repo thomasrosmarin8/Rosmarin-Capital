@@ -163,9 +163,10 @@ function initAnalytics() {
   const bestClosed     = closed.length > 0 ? closed.reduce((a, b) => b.gainLoss > a.gainLoss ? b : a) : null;
 
   const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+  const largest = positions.reduce((a, b) => b.weight > a.weight ? b : a);
   set('an-total-value',      '$' + Math.round(totalValue).toLocaleString());
   set('an-best-closed',      bestClosed ? bestClosed.ticker + ' +' + bestClosed.gainLoss + '%' : '--');
-  set('an-active-positions', positions.length + ' Stocks');
+  set('an-largest-holding',  largest.ticker + ' · ' + largest.weight + '%');
   set('an-sectors',          PORTFOLIO_DATA.sectors.length + ' Sectors');
   set('an-portfolio-age',    monthsActive + ' Months');
 

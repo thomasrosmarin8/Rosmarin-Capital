@@ -115,7 +115,7 @@ const PORTFOLIO_DATA = {
       name: 'Micron Technology, Inc.',
       sector: 'Semiconductors / Memory',
       gainLoss: 95,
-      note: 'AI memory thesis played out ahead of schedule. Sized at 15% of the portfolio — the highest-conviction call in the fund. Closed to lock in gains as HBM normalization risk emerged.',
+      note: 'AI memory demand was undervalued by the market and we caught the wave. Micron valuation got too high and became unattractive.',
     },
   ],
 

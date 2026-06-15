@@ -157,9 +157,9 @@ function initPerformanceChart() {
 function initAnalytics() {
   const positions      = PORTFOLIO_DATA.positions;
   const closed         = PORTFOLIO_DATA.closedTrades || [];
-  const totalValue     = 219363;
+  const totalValue     = 220203.39;
   const portfolioStart = new Date(2024, 8); // Sep 2024
-  const monthsActive   = Math.round((new Date() - portfolioStart) / (1000 * 60 * 60 * 24 * 30.44));
+  const monthsActive   = 2;
   const bestClosed     = closed.length > 0 ? closed.reduce((a, b) => b.gainLoss > a.gainLoss ? b : a) : null;
 
   const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };

@@ -28,7 +28,7 @@ const PORTFOLIO_DATA = {
       sector: 'Search / Cloud / AI',
       weight: 18.0,
       gainLoss: 11.04,
-      thesis: "Google's search monopoly generates the cash to fund the best AI lab in the world. Cloud accelerating, Waymo optionality, and a PE of 28 for a business growing 15%+ — still undervalued.",
+      thesis: "Google's search monopoly generates the cash to fund the best AI lab in the world. Cloud accelerating, Waymo optionality, and a PE of 28 for a business growing 15%+; still undervalued.",
     },
     {
       ticker: 'META',
@@ -84,7 +84,7 @@ const PORTFOLIO_DATA = {
       sector: 'Nuclear Energy',
       weight: 8.1,
       gainLoss: -10.40,
-      thesis: "One of the only US-licensed producers of HALEU — the advanced fuel needed for next-generation nuclear reactors. As AI data centers seek reliable clean energy, nuclear is the answer and Centrus is a critical enabler.",
+      thesis: "One of the only US-licensed producers of HALEU; the advanced fuel needed for next-generation nuclear reactors. As AI data centers seek reliable clean energy, nuclear is the answer and Centrus is a critical enabler.",
     },
     {
       ticker: 'TTWO',
@@ -92,7 +92,7 @@ const PORTFOLIO_DATA = {
       sector: 'Interactive Gaming',
       weight: 7.9,
       gainLoss: -4.64,
-      thesis: "GTA VI is one of the most anticipated software releases in history. Take-Two's IP portfolio — GTA, Red Dead, NBA 2K — is best-in-class. The stock has been punished for delays, but the eventual launch represents a massive catalyst.",
+      thesis: "GTA VI is one of the most anticipated software releases in history. Take-Two's IP portfolio (GTA, Red Dead, NBA 2K) is best-in-class. The stock has been punished for delays, but the eventual launch represents a massive catalyst.",
     },
   ],
 
@@ -127,7 +127,7 @@ const PORTFOLIO_DATA = {
       sector: 'Cloud / AI',
       status: 'Awaiting Entry',
       statusClass: 'status-waiting',
-      why: "Azure and Copilot are the clearest enterprise AI monetization story in tech. GitHub's AI tools and M365 Copilot integration give Microsoft a seat in every knowledge worker's workflow. Watching for a better entry — the business is exceptional, the multiple demands patience.",
+      why: "Azure and Copilot are the clearest enterprise AI monetization story in tech. GitHub's AI tools and M365 Copilot integration give Microsoft a seat in every knowledge worker's workflow. Watching for a better entry; the business is exceptional, the multiple demands patience.",
     },
     {
       ticker: 'SOFI',
@@ -135,7 +135,7 @@ const PORTFOLIO_DATA = {
       sector: 'Fintech / Banking',
       status: 'Watching',
       statusClass: 'status-watching',
-      why: "A fully integrated digital bank that recently turned profitable. The banking charter significantly lowers cost of capital vs. fintech peers. Market is pricing in near-zero long-term growth — looks like a misunderstood turnaround story with multiple years of re-rating potential.",
+      why: "A fully integrated digital bank that recently turned profitable. The banking charter significantly lowers cost of capital vs. fintech peers. Market is pricing in near-zero long-term growth; looks like a misunderstood turnaround story with multiple years of re-rating potential.",
     },
     {
       ticker: 'NBIS',
@@ -143,7 +143,7 @@ const PORTFOLIO_DATA = {
       sector: 'AI Infrastructure',
       status: 'High Conviction',
       statusClass: 'status-conviction',
-      why: "Formerly Yandex's international arm, now a focused AI cloud infrastructure company building GPU compute clusters across Europe. One of the few credible alternatives to US hyperscalers for European AI workloads. Early-stage and high-risk — but the opportunity is enormous.",
+      why: "Formerly Yandex's international arm, now a focused AI cloud infrastructure company building GPU compute clusters across Europe. One of the few credible alternatives to US hyperscalers for European AI workloads. Early-stage and high-risk; but the opportunity is enormous.",
     },
     {
       ticker: 'LULU',
@@ -151,7 +151,7 @@ const PORTFOLIO_DATA = {
       sector: 'Consumer / Retail',
       status: 'Watching',
       statusClass: 'status-watching',
-      why: "Premium athletic brand with cult-like customer loyalty and exceptional repeat purchase rates. Slowing US growth has hammered the stock, but international expansion — particularly China — remains a significant untapped runway. A best-in-class brand at a much more interesting price.",
+      why: "Premium athletic brand with cult-like customer loyalty and exceptional repeat purchase rates. Slowing US growth has hammered the stock, but international expansion (particularly China) remains a significant untapped runway. A best-in-class brand at a much more interesting price.",
     },
   ],
 

@@ -155,34 +155,52 @@ function initPerformanceChart() {
 
 // ── Analytics ─────────────────────────────────
 function initAnalytics() {
-  const perf      = PORTFOLIO_DATA.performance;
-  const positions = PORTFOLIO_DATA.positions.filter(p => p.ticker !== 'CASH');
-  const sign      = v => Number(v) >= 0 ? '+' : '';
+  const positions  = PORTFOLIO_DATA.positions.filter(p => p.ticker !== 'CASH');
+  const closed     = PORTFOLIO_DATA.closedTrades || [];
 
-  const inceptionReturn = 7.25;
-  const totalCost       = 200000;
-  const totalValue      = totalCost * (1 + inceptionReturn / 100);
-  const totalGain       = totalValue - totalCost;
-  const winners         = positions.filter(p => p.gainLoss > 0);
-  const winRate         = Math.round(winners.length / positions.length * 100);
-
-  const sp500Return = ((perf[perf.length-1].sp500 - perf[0].sp500) / perf[0].sp500 * 100);
-  const alpha       = (inceptionReturn - sp500Return).toFixed(1);
-
-  const sorted = [...positions].sort((a, b) => b.gainLoss - a.gainLoss);
-  const best   = sorted[0];
-  const worst  = sorted[sorted.length - 1];
+  const totalValue    = 219342.97;
+  const portfolioStart = new Date(2024, 8); // Sep 2024
+  const monthsActive  = Math.round((new Date() - portfolioStart) / (1000 * 60 * 60 * 24 * 30.44));
+  const closedWinners = closed.filter(t => t.gainLoss > 0);
+  const closedWinRate = closed.length > 0 ? Math.round(closedWinners.length / closed.length * 100) : 100;
+  const bestClosed    = closed.length > 0 ? closed.reduce((a, b) => b.gainLoss > a.gainLoss ? b : a) : null;
 
   const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
-  set('an-total-value', '$' + Math.round(totalValue).toLocaleString());
-  set('an-total-gain',  '+$' + Math.round(totalGain).toLocaleString());
-  set('an-win-rate',    winRate + '%  (' + winners.length + '/' + positions.length + ')');
-  set('an-alpha',       sign(alpha) + alpha + '%');
-  set('an-best',        best.ticker + '  ' + sign(best.gainLoss) + best.gainLoss + '%');
-  set('an-worst',       worst.ticker + '  ' + sign(worst.gainLoss) + worst.gainLoss + '%');
+  set('an-total-value',      '$' + Math.round(totalValue).toLocaleString());
+  set('an-best-closed',      bestClosed ? bestClosed.ticker + ' +' + bestClosed.gainLoss + '%' : '--');
+  set('an-closed-win-rate',  closedWinRate + '%');
+  set('an-active-positions', positions.length + ' Stocks');
+  set('an-sectors',          PORTFOLIO_DATA.sectors.length + ' Sectors');
+  set('an-portfolio-age',    monthsActive + ' Months');
 
+  initClosedTrades(closed);
   initSectorChart();
-  initAttributionChart(sorted);
+  initAttributionChart([...positions].sort((a, b) => b.gainLoss - a.gainLoss));
+}
+
+function initClosedTrades(closed) {
+  const container = document.getElementById('closed-trades-list');
+  if (!container || !closed.length) return;
+  container.innerHTML = '';
+  closed.forEach(trade => {
+    const glPrefix = trade.gainLoss >= 0 ? '+' : '';
+    container.innerHTML += `
+      <div class="closed-trade-inner">
+        <div class="ct-left">
+          <span class="ct-ticker">${trade.ticker}</span>
+          <span class="ct-name">${trade.name}</span>
+          <span class="ct-sector">${trade.sector}</span>
+        </div>
+        <div class="ct-center">
+          <p class="ct-note">${trade.note}</p>
+        </div>
+        <div class="ct-right">
+          <span class="ct-return gain">${glPrefix}${trade.gainLoss}%</span>
+          <span class="ct-status">Realized Gain</span>
+        </div>
+      </div>
+    `;
+  });
 }
 
 function initSectorChart() {

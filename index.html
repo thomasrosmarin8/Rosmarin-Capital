@@ -119,33 +119,33 @@
       <div class="analytics-metrics reveal" id="analytics-metrics">
         <div class="analytic-card">
           <span class="analytic-icon">&#9650;</span>
-          <span class="analytic-value positive" id="an-total-value">--</span>
+          <span class="analytic-value" id="an-total-value">--</span>
           <span class="analytic-label">Portfolio Value</span>
         </div>
-        <div class="analytic-card">
-          <span class="analytic-icon">&#9654;</span>
-          <span class="analytic-value positive" id="an-total-gain">--</span>
-          <span class="analytic-label">Unrealized Gain</span>
-        </div>
-        <div class="analytic-card">
+        <div class="analytic-card analytic-card--highlight">
           <span class="analytic-icon">&#9733;</span>
-          <span class="analytic-value" id="an-win-rate">--</span>
-          <span class="analytic-label">Win Rate</span>
+          <span class="analytic-value gain" id="an-best-closed">--</span>
+          <span class="analytic-label">Best Closed Trade</span>
         </div>
         <div class="analytic-card">
-          <span class="analytic-icon">&#8657;</span>
-          <span class="analytic-value positive" id="an-alpha">--</span>
-          <span class="analytic-label">Alpha vs S&amp;P 500</span>
+          <span class="analytic-icon">&#10003;</span>
+          <span class="analytic-value gain" id="an-closed-win-rate">--</span>
+          <span class="analytic-label">Closed Win Rate</span>
         </div>
         <div class="analytic-card">
-          <span class="analytic-icon">&#9651;</span>
-          <span class="analytic-value gain" id="an-best">--</span>
-          <span class="analytic-label">Best Position</span>
+          <span class="analytic-icon">&#9671;</span>
+          <span class="analytic-value" id="an-active-positions">--</span>
+          <span class="analytic-label">Active Positions</span>
         </div>
         <div class="analytic-card">
-          <span class="analytic-icon">&#9661;</span>
-          <span class="analytic-value loss" id="an-worst">--</span>
-          <span class="analytic-label">Worst Position</span>
+          <span class="analytic-icon">&#9783;</span>
+          <span class="analytic-value" id="an-sectors">--</span>
+          <span class="analytic-label">Sectors</span>
+        </div>
+        <div class="analytic-card">
+          <span class="analytic-icon">&#128337;</span>
+          <span class="analytic-value" id="an-portfolio-age">--</span>
+          <span class="analytic-label">Months Active</span>
         </div>
       </div>
 
@@ -165,23 +165,40 @@
         </div>
       </div>
 
-      <div class="insights-row reveal">
-        <div class="insight-card insight-gold">
-          <div class="insight-label">AI Concentration</div>
-          <div class="insight-value">50.6%</div>
-          <div class="insight-desc">of the portfolio is in AI-exposed companies (GOOG, META, MU), the dominant theme driving the long-term view.</div>
+      <!-- Closed Trades Highlight -->
+      <div class="closed-trades-row reveal">
+        <div class="closed-trades-label">
+          <span class="section-label">Closed Positions</span>
+          <p class="closed-trades-desc">Realized gains booked since inception.</p>
         </div>
-        <div class="insight-card insight-green">
-          <div class="insight-label">Standout Performer</div>
-          <div class="insight-value">MU +60.1%</div>
-          <div class="insight-desc">Micron is the portfolio's biggest winner, validating the AI memory thesis ahead of schedule.</div>
-        </div>
-        <div class="insight-card insight-blue">
-          <div class="insight-label">Macro Diversification</div>
-          <div class="insight-value">~27%</div>
-          <div class="insight-desc">is spread across Defense (RTX), Nuclear (LEU), and Infrastructure (BIP, LMB) — non-tech bets adding resilience.</div>
+        <div class="closed-trade-card" id="closed-trades-list">
+          <!-- Populated by script.js -->
         </div>
       </div>
+
+      <!-- Portfolio Facts -->
+      <div class="portfolio-facts reveal">
+        <div class="fact-item">
+          <span class="fact-value">8</span>
+          <span class="fact-label">Sectors Represented</span>
+        </div>
+        <div class="fact-divider"></div>
+        <div class="fact-item">
+          <span class="fact-value">$226,780</span>
+          <span class="fact-label">Total Capital Deployed</span>
+        </div>
+        <div class="fact-divider"></div>
+        <div class="fact-item">
+          <span class="fact-value">$27,312</span>
+          <span class="fact-label">Cash Reserve</span>
+        </div>
+        <div class="fact-divider"></div>
+        <div class="fact-item">
+          <span class="fact-value">GOOG</span>
+          <span class="fact-label">Largest Holding · 18%</span>
+        </div>
+      </div>
+
       <p class="disclaimer">This is a paper trading portfolio for educational and research purposes. Not investment advice.</p>
     </div>
   </section>

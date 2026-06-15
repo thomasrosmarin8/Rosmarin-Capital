@@ -6,8 +6,6 @@
 const PORTFOLIO_DATA = {
 
   // ── Performance chart data ──────────────────
-  // Both series indexed to 100 at inception.
-  // Overall P/L since inception: +7.25% ($14,491.95 on $200,000)
   performance: [
     { date: '2024-09', portfolio: 100.0,  sp500: 100.0  },
     { date: '2024-10', portfolio: 103.4,  sp500: 102.1  },
@@ -21,78 +19,78 @@ const PORTFOLIO_DATA = {
   ],
 
   // ── Current positions ───────────────────────
-  // Weights based on cost / $200,000 total portfolio
+  // Weights based on Net Liq / Total Portfolio Value ($219,342.97)
   // gainLoss = P/L Open % from brokerage
   positions: [
     {
       ticker: 'GOOG',
       name: 'Alphabet Inc.',
       sector: 'Search / Cloud / AI',
-      weight: 17.8,
-      gainLoss: 19.01,
-      thesis: "Google's search monopoly generates the cash to fund the best AI lab in the world. Cloud accelerating, Waymo optionality, and a PE of 30 for a business growing 15%+ — still undervalued.",
+      weight: 18.0,
+      gainLoss: 11.04,
+      thesis: "Google's search monopoly generates the cash to fund the best AI lab in the world. Cloud accelerating, Waymo optionality, and a PE of 28 for a business growing 15%+ — still undervalued.",
     },
     {
       ticker: 'META',
       name: 'Meta Platforms, Inc.',
       sector: 'Social Media / AI',
-      weight: 17.8,
-      gainLoss: -8.18,
+      weight: 14.3,
+      gainLoss: -11.89,
       thesis: "3B+ daily users across Instagram, WhatsApp, and Facebook create an advertising moat no competitor can replicate. AI-driven Advantage+ is driving ad efficiency higher each quarter.",
     },
     {
-      ticker: 'MU',
-      name: 'Micron Technology, Inc.',
-      sector: 'Semiconductors / Memory',
-      weight: 15.0,
-      gainLoss: 60.05,
-      thesis: "AI servers require exponentially more HBM memory — Micron is one of only three suppliers globally. The DRAM upcycle is structural, not cyclical, driven by inference infrastructure buildout.",
+      ticker: 'LLY',
+      name: 'Eli Lilly & Company',
+      sector: 'Pharmaceuticals',
+      weight: 13.9,
+      gainLoss: -0.09,
+      thesis: "Mounjaro and Zepbound dominate the GLP-1 market with best-in-class efficacy data. The obesity and diabetes TAM could exceed $150B globally. A deep pipeline spanning oncology and Alzheimer's adds optionality. One of the most compelling 5-year compounders in any sector.",
     },
     {
       ticker: 'UBER',
       name: 'Uber Technologies, Inc.',
       sector: 'Platform Economy',
-      weight: 10.1,
-      gainLoss: 1.16,
+      weight: 8.9,
+      gainLoss: -2.74,
       thesis: "The dominant global mobility platform with network effects that compound with every new driver and rider. Expanding into freight and autonomous partnerships positions Uber for the AV transition rather than against it.",
     },
     {
       ticker: 'LMB',
       name: 'Limbach Holdings, Inc.',
       sector: 'Industrial Services',
-      weight: 9.9,
-      gainLoss: -17.13,
+      weight: 8.2,
+      gainLoss: -9.59,
       thesis: "A hidden gem in mechanical and HVAC services. Transitioning toward higher-margin owner-direct relationships. Data center construction boom creates a multi-year demand tailwind few analysts are covering.",
     },
     {
       ticker: 'RTX',
       name: 'RTX Corporation',
       sector: 'Defense & Aerospace',
-      weight: 9.9,
-      gainLoss: -14.78,
+      weight: 8.2,
+      gainLoss: -8.90,
       thesis: "A tier-1 defense prime with Pratt & Whitney engines powering a huge installed base of commercial aircraft. NATO spending increases and geopolitical complexity drive a durable multi-year order backlog.",
     },
     {
       ticker: 'LEU',
       name: 'Centrus Energy Corp.',
       sector: 'Nuclear Energy',
-      weight: 9.9,
-      gainLoss: -8.36,
+      weight: 8.1,
+      gainLoss: -10.40,
       thesis: "One of the only US-licensed producers of HALEU — the advanced fuel needed for next-generation nuclear reactors. As AI data centers seek reliable clean energy, nuclear is the answer and Centrus is a critical enabler.",
     },
     {
-      ticker: 'BIP',
-      name: 'Brookfield Infrastructure Partners',
-      sector: 'Global Infrastructure',
-      weight: 7.0,
-      gainLoss: 2.93,
-      thesis: "Inflation-protected cash flows from utilities, toll roads, ports, and data infrastructure across five continents. Brookfield's operational expertise consistently recycles capital into higher-returning assets.",
+      ticker: 'TTWO',
+      name: 'Take-Two Interactive Software',
+      sector: 'Interactive Gaming',
+      weight: 7.9,
+      gainLoss: -4.64,
+      thesis: "GTA VI is one of the most anticipated software releases in history. Take-Two's IP portfolio — GTA, Red Dead, NBA 2K — is best-in-class. The stock has been punished for delays, but the eventual launch represents a massive catalyst.",
     },
     {
       ticker: 'CASH',
       name: 'Cash & Equivalents',
       sector: 'Liquidity Reserve',
-      weight: 2.7,
+      weight: 12.5,
       gainLoss: 0,
       thesis: 'Dry powder held for opportunistic deployment during market dislocations.',
     },
@@ -100,13 +98,25 @@ const PORTFOLIO_DATA = {
 
   // ── Sector allocation (for doughnut chart) ──
   sectors: [
-    { label: 'AI / Technology',    weight: 50.6, color: '#C9A84C' },
-    { label: 'Platform Economy',   weight: 10.1, color: '#60a5fa' },
-    { label: 'Industrial Services',weight:  9.9, color: '#a78bfa' },
-    { label: 'Defense & Aerospace',weight:  9.9, color: '#34d399' },
-    { label: 'Nuclear Energy',     weight:  9.9, color: '#fb923c' },
-    { label: 'Infrastructure',     weight:  7.0, color: '#f472b6' },
-    { label: 'Cash',               weight:  2.7, color: '#4a5568' },
+    { label: 'AI / Technology',     weight: 32.3, color: '#C9A84C' },
+    { label: 'Pharmaceuticals',     weight: 13.9, color: '#a78bfa' },
+    { label: 'Cash',                weight: 12.5, color: '#374151' },
+    { label: 'Platform Economy',    weight:  8.9, color: '#60a5fa' },
+    { label: 'Industrial Services', weight:  8.2, color: '#34d399' },
+    { label: 'Defense & Aerospace', weight:  8.2, color: '#64748b' },
+    { label: 'Nuclear Energy',      weight:  8.1, color: '#fb923c' },
+    { label: 'Interactive Gaming',  weight:  7.9, color: '#f472b6' },
+  ],
+
+  // ── Closed / Exited Positions ───────────────
+  closedTrades: [
+    {
+      ticker: 'MU',
+      name: 'Micron Technology, Inc.',
+      sector: 'Semiconductors / Memory',
+      gainLoss: 95,
+      note: 'AI memory thesis played out ahead of schedule. Sized at 15% of the portfolio — the highest-conviction call in the fund. Closed to lock in gains as HBM normalization risk emerged.',
+    },
   ],
 
   // ── Watchlist ───────────────────────────────
@@ -118,14 +128,6 @@ const PORTFOLIO_DATA = {
       status: 'Awaiting Entry',
       statusClass: 'status-waiting',
       why: "Azure and Copilot are the clearest enterprise AI monetization story in tech. GitHub's AI tools and M365 Copilot integration give Microsoft a seat in every knowledge worker's workflow. Watching for a better entry — the business is exceptional, the multiple demands patience.",
-    },
-    {
-      ticker: 'LLY',
-      name: 'Eli Lilly & Company',
-      sector: 'Pharmaceuticals',
-      status: 'High Conviction',
-      statusClass: 'status-conviction',
-      why: "Mounjaro and Zepbound dominate the GLP-1 market with best-in-class efficacy data. The obesity and diabetes TAM could exceed $150B globally. A deep pipeline spanning oncology and Alzheimer's adds optionality. One of the most compelling 5-year compounders in any sector.",
     },
     {
       ticker: 'SOFI',
@@ -142,14 +144,6 @@ const PORTFOLIO_DATA = {
       status: 'High Conviction',
       statusClass: 'status-conviction',
       why: "Formerly Yandex's international arm, now a focused AI cloud infrastructure company building GPU compute clusters across Europe. One of the few credible alternatives to US hyperscalers for European AI workloads. Early-stage and high-risk — but the opportunity is enormous.",
-    },
-    {
-      ticker: 'TTWO',
-      name: 'Take-Two Interactive Software',
-      sector: 'Interactive Gaming',
-      status: 'Watching',
-      statusClass: 'status-watching',
-      why: "GTA VI is one of the most anticipated software releases in history. Take-Two's IP portfolio — GTA, Red Dead, NBA 2K — is best-in-class. The stock has been punished for delays, but the eventual launch represents a massive catalyst. Position sizing and timing are critical here.",
     },
     {
       ticker: 'LULU',

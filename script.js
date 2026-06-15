@@ -155,20 +155,16 @@ function initPerformanceChart() {
 
 // ── Analytics ─────────────────────────────────
 function initAnalytics() {
-  const positions  = PORTFOLIO_DATA.positions.filter(p => p.ticker !== 'CASH');
-  const closed     = PORTFOLIO_DATA.closedTrades || [];
-
-  const totalValue    = 219342.97;
+  const positions      = PORTFOLIO_DATA.positions;
+  const closed         = PORTFOLIO_DATA.closedTrades || [];
+  const totalValue     = 219363;
   const portfolioStart = new Date(2024, 8); // Sep 2024
-  const monthsActive  = Math.round((new Date() - portfolioStart) / (1000 * 60 * 60 * 24 * 30.44));
-  const closedWinners = closed.filter(t => t.gainLoss > 0);
-  const closedWinRate = closed.length > 0 ? Math.round(closedWinners.length / closed.length * 100) : 100;
-  const bestClosed    = closed.length > 0 ? closed.reduce((a, b) => b.gainLoss > a.gainLoss ? b : a) : null;
+  const monthsActive   = Math.round((new Date() - portfolioStart) / (1000 * 60 * 60 * 24 * 30.44));
+  const bestClosed     = closed.length > 0 ? closed.reduce((a, b) => b.gainLoss > a.gainLoss ? b : a) : null;
 
   const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
   set('an-total-value',      '$' + Math.round(totalValue).toLocaleString());
   set('an-best-closed',      bestClosed ? bestClosed.ticker + ' +' + bestClosed.gainLoss + '%' : '--');
-  set('an-closed-win-rate',  closedWinRate + '%');
   set('an-active-positions', positions.length + ' Stocks');
   set('an-sectors',          PORTFOLIO_DATA.sectors.length + ' Sectors');
   set('an-portfolio-age',    monthsActive + ' Months');

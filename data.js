@@ -19,7 +19,7 @@ const PORTFOLIO_DATA = {
   ],
 
   // ── Current positions ───────────────────────
-  // Weights based on Net Liq / Total Portfolio Value ($219,342.97)
+  // Weights based on Net Liq / Total Portfolio Value (~$219,363)
   // gainLoss = P/L Open % from brokerage
   positions: [
     {
@@ -45,6 +45,14 @@ const PORTFOLIO_DATA = {
       weight: 13.9,
       gainLoss: -0.09,
       thesis: "Mounjaro and Zepbound dominate the GLP-1 market with best-in-class efficacy data. The obesity and diabetes TAM could exceed $150B globally. A deep pipeline spanning oncology and Alzheimer's adds optionality. One of the most compelling 5-year compounders in any sector.",
+    },
+    {
+      ticker: 'AMZN',
+      name: 'Amazon.com, Inc.',
+      sector: 'E-Commerce / Cloud / AI',
+      weight: 12.5,
+      gainLoss: 0.09,
+      thesis: "AWS is the world's dominant cloud infrastructure platform and the engine funding everything else Amazon does. AI is accelerating enterprise cloud migration, and Amazon's logistics network is impossible to replicate. A business with decades of compounding ahead of it.",
     },
     {
       ticker: 'UBER',
@@ -86,21 +94,13 @@ const PORTFOLIO_DATA = {
       gainLoss: -4.64,
       thesis: "GTA VI is one of the most anticipated software releases in history. Take-Two's IP portfolio — GTA, Red Dead, NBA 2K — is best-in-class. The stock has been punished for delays, but the eventual launch represents a massive catalyst.",
     },
-    {
-      ticker: 'CASH',
-      name: 'Cash & Equivalents',
-      sector: 'Liquidity Reserve',
-      weight: 12.5,
-      gainLoss: 0,
-      thesis: 'Dry powder held for opportunistic deployment during market dislocations.',
-    },
   ],
 
   // ── Sector allocation (for doughnut chart) ──
   sectors: [
     { label: 'AI / Technology',     weight: 32.3, color: '#C9A84C' },
     { label: 'Pharmaceuticals',     weight: 13.9, color: '#a78bfa' },
-    { label: 'Cash',                weight: 12.5, color: '#374151' },
+    { label: 'E-Commerce / Cloud',  weight: 12.5, color: '#38bdf8' },
     { label: 'Platform Economy',    weight:  8.9, color: '#60a5fa' },
     { label: 'Industrial Services', weight:  8.2, color: '#34d399' },
     { label: 'Defense & Aerospace', weight:  8.2, color: '#64748b' },

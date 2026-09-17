@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -22,8 +21,7 @@
       <ul class="nav-links">
         <li><a href="#reads">Research</a></li>
         <li><a href="#deep-dive">Deep Dive</a></li>
-        <li><a href="#analytics">Portfolio</a></li>
-        <li><a href="#performance-update">Updates</a></li>
+        <li><a href="#radar">On My Radar</a></li>
         <li><a href="#mission">Mission</a></li>
         <li><a href="#about">About</a></li>
         <li>
@@ -51,7 +49,7 @@
       <p class="hero-sub reveal reveal-delay-2">Investment research, market conviction, and financial ideas built for everyone.</p>
       <div class="hero-cta reveal reveal-delay-3" style="margin-top:0.5rem">
         <a href="#reads" class="btn btn-primary">Read the Research</a>
-        <a href="#analytics" class="btn btn-outline">View Portfolio</a>
+        <a href="#radar" class="btn btn-outline">On My Radar</a>
       </div>
     </div>
     <a href="#reads" class="hero-scroll-hint">
@@ -81,7 +79,7 @@
         <div class="deepdive-left">
           <span class="section-label">Featured Research</span>
           <h2>Most Recent Deep Dive</h2>
-          <p>Every position starts with serious work. My deep dives walk through the full thesis, financials, and risk factors behind each idea; written in plain English with no jargon.</p>
+          <p>Every piece of research starts with serious work. My deep dives walk through the full thesis, financials, and risk factors behind each idea; written in plain English with no jargon.</p>
           <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:2rem;">
             <a href="https://rosmarincapital.substack.com/p/position-deep-dive-micron-technology" target="_blank" rel="noopener" class="btn btn-primary">Read the Deep Dive &rarr;</a>
             <a href="https://substack.com/@rosmarincapital" target="_blank" rel="noopener" class="btn btn-outline">All Research</a>
@@ -108,89 +106,46 @@
     </div>
   </section>
 
-  <!-- PORTFOLIO ANALYTICS -->
-  <section id="analytics">
+  <!-- ON MY RADAR -->
+  <section id="radar">
     <div class="section-inner">
       <div class="section-header reveal">
-        <span class="section-label">Paper Trading Portfolio</span>
-        <h2>Portfolio Breakdown</h2>
-        <p class="section-subtitle">Rosmarin Capital paper trading portfolio; tracking my highest-conviction ideas in real time.</p>
+        <span class="section-label">Current Focus</span>
+        <h2>On My Radar</h2>
+        <p class="section-subtitle">The macro themes and market dynamics I'm watching most closely right now.</p>
       </div>
-
-      <div class="analytics-metrics reveal" id="analytics-metrics">
-        <div class="analytic-card">
-          <span class="analytic-icon">&#9650;</span>
-          <span class="analytic-value" id="an-total-value">--</span>
-          <span class="analytic-label">Portfolio Value</span>
+      <div class="radar-grid reveal">
+        <div class="radar-card">
+          <span class="radar-num">01</span>
+          <span class="radar-topic">Energy and gas prices</span>
         </div>
-        <div class="analytic-card analytic-card--highlight">
-          <span class="analytic-icon">&#9733;</span>
-          <span class="analytic-value gain" id="an-best-closed">--</span>
-          <span class="analytic-label">Best Closed Trade</span>
+        <div class="radar-card">
+          <span class="radar-num">02</span>
+          <span class="radar-topic">Mortgage rates and housing affordability</span>
         </div>
-        <div class="analytic-card">
-          <span class="analytic-icon">&#9671;</span>
-          <span class="analytic-value gold" id="an-largest-holding">--</span>
-          <span class="analytic-label">Largest Holding</span>
+        <div class="radar-card">
+          <span class="radar-num">03</span>
+          <span class="radar-topic">Surging treasury yields</span>
         </div>
-        <div class="analytic-card">
-          <span class="analytic-icon">&#9783;</span>
-          <span class="analytic-value" id="an-sectors">--</span>
-          <span class="analytic-label">Sectors</span>
+        <div class="radar-card">
+          <span class="radar-num">04</span>
+          <span class="radar-topic">AI capital spending by big tech companies</span>
         </div>
-        <div class="analytic-card">
-          <span class="analytic-icon">&#128337;</span>
-          <span class="analytic-value" id="an-portfolio-age">--</span>
-          <span class="analytic-label">Months Active</span>
+        <div class="radar-card">
+          <span class="radar-num">05</span>
+          <span class="radar-topic">Dollar strength</span>
         </div>
-      </div>
-
-      <div class="analytics-charts reveal">
-        <div class="analytics-chart-card">
-          <h3 class="chart-card-title">Sector Allocation</h3>
-          <div class="donut-wrap">
-            <canvas id="sectorChart"></canvas>
-          </div>
-          <div class="sector-legend" id="sector-legend"></div>
+        <div class="radar-card">
+          <span class="radar-num">06</span>
+          <span class="radar-topic">Oil and gold prices</span>
         </div>
-        <div class="analytics-chart-card">
-          <h3 class="chart-card-title">Position P&amp;L Attribution</h3>
-          <div class="attribution-wrap">
-            <canvas id="attributionChart"></canvas>
-          </div>
+        <div class="radar-card">
+          <span class="radar-num">07</span>
+          <span class="radar-topic">Market concentration in a handful of large companies</span>
         </div>
-      </div>
-
-      <!-- Closed Trades Highlight -->
-      <div class="closed-trades-row reveal">
-        <div class="closed-trades-label">
-          <span class="section-label">Closed Positions</span>
-          <p class="closed-trades-desc">Realized gains booked since inception.</p>
-        </div>
-        <div class="closed-trade-card" id="closed-trades-list">
-          <!-- Populated by script.js -->
-        </div>
-      </div>
-
-      <p class="disclaimer">This is a paper trading portfolio for educational and research purposes. Not investment advice.</p>
-    </div>
-  </section>
-
-  <!-- PERFORMANCE UPDATE -->
-  <section id="performance-update">
-    <div class="section-inner">
-      <div class="section-header reveal">
-        <span class="section-label">Portfolio Updates</span>
-        <h2>Most Recent Performance Update</h2>
-        <p class="section-subtitle">Monthly breakdowns of portfolio returns, position changes, and market commentary.</p>
-      </div>
-      <div class="perf-update-card reveal">
-        <div class="perf-update-coming">
-          <span class="coming-soon-badge">Coming Soon</span>
-          <h3>First Monthly Update</h3>
-          <p>The first portfolio performance update is on its way. It will include a full breakdown of monthly returns, position-level attribution, what changed and why, and forward-looking commentary on every holding.</p>
-          <p class="perf-update-sub">Check back soon or subscribe on Substack to be notified when it drops.</p>
-          <a href="https://substack.com/@rosmarincapital" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:1.5rem;">Subscribe for Updates</a>
+        <div class="radar-card">
+          <span class="radar-num">08</span>
+          <span class="radar-topic">Geopolitical conflicts</span>
         </div>
       </div>
     </div>
@@ -259,7 +214,7 @@
       <div class="footer-links">
         <a href="#reads">Research</a>
         <a href="#deep-dive">Deep Dive</a>
-        <a href="#analytics">Portfolio</a>
+        <a href="#radar">On My Radar</a>
         <a href="#mission">Mission</a>
         <a href="#about">About</a>
       </div>
@@ -273,8 +228,8 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Rosmarin Capital. All rights reserved.</p>
-      <p class="footer-disclaimer">Not investment advice. For educational purposes only.</p>
+      <p>&copy; 2026 Rosmarin Capital. All rights reserved.</p>
+      <p class="footer-disclaimer">For educational and research purposes only.</p>
     </div>
   </footer>
 
